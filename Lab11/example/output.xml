@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.9.0 on win32)" generated="2026-09-12T16:22:47.735755" rpa="false" schemaversion="5">
+<suite id="s1" name="Webdriver" source="E:\KAGE\work\3_1\SQA\Lab11\webdriver.robot">
+<test id="s1-t1" name="TC_001: Start Chrome For Testing" line="10">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-09-12T16:22:48.001739" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000019B491B6F40&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-09-12T16:22:48.000709" elapsed="0.001030"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-09-12T16:22:48.002710" level="INFO">${chrome_options.binary_location} = D:\KAGE\Tools\Chrome\ChromeForTesting\chrome.exe</msg>
+<var>${chrome_options.binary_location}</var>
+<arg>${CHROME_BROWSER_PATH}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-09-12T16:22:48.001739" elapsed="0.000971"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-09-12T16:22:48.003711" level="INFO">${service} = &lt;selenium.webdriver.chrome.service.Service object at 0x0000019B491DB490&gt;</msg>
+<var>${service}</var>
+<arg>sys.modules["selenium.webdriver.chrome.service"].Service(executable_path=r"${CHROME_DRIVER_PATH}")</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-09-12T16:22:48.002710" elapsed="0.001001"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2026-09-12T16:22:48.004712" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${chrome_options}</arg>
+<arg>service=${service}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2026-09-12T16:22:48.003711" elapsed="1.142935"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-09-12T16:22:49.147647" level="INFO">Opening url 'https://www.kku.ac.th'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-09-12T16:22:49.146646" elapsed="2.795791"/>
+</kw>
+<status status="PASS" start="2026-09-12T16:22:47.999741" elapsed="3.943698"/>
+</test>
+<status status="PASS" start="2026-09-12T16:22:47.737755" elapsed="4.206682"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Webdriver" id="s1" pass="1" fail="0" skip="0">Webdriver</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
